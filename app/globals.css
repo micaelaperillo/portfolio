@@ -39,8 +39,8 @@
     @apply text-lg;
   }
   p {
-    @apply text-base;
-    font-family: var(--font-roboto), system-ui, sans-serif;
+    @apply text-lg;
+    /* font-family: var(--font-roboto), system-ui, sans-serif; */
   }
 }
 

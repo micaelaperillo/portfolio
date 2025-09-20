@@ -53,7 +53,7 @@ export default function Sidebar() {
       </div>
 
       {/* Thin line separator */}
-      <div className="absolute top-10 bottom-10 right-0 w-[1px] bg-gray-200 dark:bg-gray-800"></div>
+      <div className="absolute top-10 bottom-10 right-0 w-[1px] bg-gray-200 dark:bg-gray-900"></div>
     </aside>
   );
 }
