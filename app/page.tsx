@@ -1,8 +1,8 @@
 
 export default function Home() {
   return (
-    <>
-    <h1>Home</h1>
-    </>
+    <div className="m-10 max-w-2xl">
+      <p>About section</p>
+    </div>
   );
 }
