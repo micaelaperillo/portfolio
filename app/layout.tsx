@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Instrument_Sans, Instrument_Serif, Roboto } from 'next/font/google';
 import "./globals.css";
+import { Suspense } from "react";
+import Sidebar from "@/components/Sidebar";
 
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
@@ -34,9 +36,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${instrumentSans.variable} ${instrumentSerif.variable} ${roboto.variable} antialiased`}
+        className={`${instrumentSans.variable} ${instrumentSerif.variable} ${roboto.variable} antialiased flex min-h-screen`}
       >
-        {children}
+        {/* Sidebar stays on the left */}
+        <Sidebar />
+
+        {/* Main content */}
+        <main className="flex-1 p-6">
+          <Suspense fallback={null}>{children}</Suspense>
+        </main>
       </body>
     </html>
   );
