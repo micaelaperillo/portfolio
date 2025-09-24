@@ -38,7 +38,6 @@ export default function RootLayout({
       <body
         className={`${instrumentSans.variable} ${instrumentSerif.variable} ${roboto.variable} antialiased flex min-h-screen`}
       >
-        {/* Sidebar stays on the left */}
         <Sidebar />
 
         {/* Main content */}

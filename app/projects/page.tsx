@@ -26,8 +26,8 @@ export default function Projects() {
     };
 
     return (
-        <div>
-            <h1 className="mb-5">Projects</h1>
+        <div className="m-10 max-w-2xl">
+            <h1 className="mb-5 pt-10">Projects</h1>
             <p>Some of the projects I've build over the years</p>
             <div className="mt-4 mb-4 flex flex-wrap gap-2">
                 {allTags.map((tag) => (

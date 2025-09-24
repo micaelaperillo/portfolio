@@ -36,10 +36,10 @@
     @apply text-xl;
   }
   h6 {
-    @apply text-lg;
+    @apply text-xl;
   }
   p {
-    @apply text-lg;
+    @apply text-xl;
     /* font-family: var(--font-roboto), system-ui, sans-serif; */
   }
 }
