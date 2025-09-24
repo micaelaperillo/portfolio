@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Instrument_Sans, Instrument_Serif, Roboto } from 'next/font/google';
 import "./globals.css";
-import { Suspense } from "react";
 import Sidebar from "@/components/Sidebar";
 
 const instrumentSans = Instrument_Sans({
@@ -42,7 +41,9 @@ export default function RootLayout({
 
         {/* Main content */}
         <main className="flex-1 p-6">
-          <Suspense fallback={null}>{children}</Suspense>
+          <div className="flex items-center justify-center">
+            <div className="h-8 w-8 animate-spin rounded-full border-4 border-t-transparent border-foreground"></div>
+          </div>
         </main>
       </body>
     </html>
