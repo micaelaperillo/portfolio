@@ -29,14 +29,15 @@ export default function Projects() {
         <div className="m-10 max-w-2xl">
             <h1 className="mb-5 pt-10">Projects</h1>
             <p>Some of the projects I've build over the years</p>
+            <p>Use the filters below to narrow down the projects by tags</p>
             <div className="mt-4 mb-4 flex flex-wrap gap-2">
                 {allTags.map((tag) => (
                     <button
                         key={tag}
-                        className={`px-2 py-1 rounded border ${
+                        className={`px-2 py-1 text-md rounded border ${
                             selectedTags.includes(tag)
                                 ? "bg-gray-500 text-gray-900"
-                                : "bg-gray-200 text-gray-900 hover:bg-gray-400"
+                                : "bg-gray-300 text-gray-900 hover:bg-gray-400"
                         }`}
                         onClick={() => handleTagToggle(tag)}
                     >

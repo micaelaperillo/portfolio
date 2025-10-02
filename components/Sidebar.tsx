@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -13,6 +13,42 @@ export default function Sidebar() {
     { name: "About", href: "/" },
     { name: "Projects", href: "/projects" },
   ];
+
+  const [argentineTime, setArgentineTime] = useState<{
+    date: string
+    time: string
+  }>({ date: "", time: "" })
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date()
+      const options: Intl.DateTimeFormatOptions = {
+        timeZone: "America/Argentina/Buenos_Aires",
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }
+      const timeOptions: Intl.DateTimeFormatOptions = {
+        timeZone: "America/Argentina/Buenos_Aires",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false,
+      }
+
+      const date = now.toLocaleDateString("en-US", options)
+      const time = now.toLocaleTimeString("en-US", timeOptions)
+
+      setArgentineTime({ date, time })
+    }
+
+    updateTime()
+    const interval = setInterval(updateTime, 1000)
+
+    return () => clearInterval(interval)
+  }, [])
+
 
   return (
     <>
@@ -25,7 +61,7 @@ export default function Sidebar() {
       </div>
 
       {/* Sidebar for Desktop */}
-      <aside className="hidden md:flex flex-col h-screen w-56 p-8 border-r border-foreground/10">
+      <aside className="hidden md:flex flex-col fixed top-0 left-0 h-screen w-56 p-8 border-r border-foreground/10 bg-background z-40">
       <div className="flex flex-col gap-6">
         <div>
           <h2 className="font-semibold">Micaela Perillo</h2> {/* Full name */}
@@ -53,32 +89,42 @@ export default function Sidebar() {
         </div>
 
         {/* Bottom: Social Media */}
-        <div className="mt-auto flex gap-4">
-          <a
-            href="https://github.com/micaelaperillo"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-foreground/70 transition"
-          >
-            <Github className="w-6 h-6" />
-          </a>
-          <a
-            href="https://linkedin.com/in/micaelaperillo"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-foreground/70 transition"
-          >
-            <Linkedin className="w-6 h-6" />
-          </a>
-          <a
-            href="mailto:micaelaperillo26@gmail.com"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-foreground/70 transition"
-          >
-            <Mail className="w-6 h-6" />
-          </a>
+        <div className="mt-auto flex flex-col items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-primary-foreground/80">
+            <div className="flex items-center gap-1 text-sm font-light">
+              <time className="tracking-wider">{argentineTime.date} {argentineTime.time}</time>
+            </div>
+          </div>
+
+          {/* Buttons */}
+          <div className="flex gap-4">
+            <a
+              href="https://github.com/micaelaperillo"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-foreground/70 transition"
+            >
+              <Github className="w-6 h-6" />
+            </a>
+            <a
+              href="https://linkedin.com/in/micaelaperillo"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-foreground/70 transition"
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a
+              href="mailto:micaelaperillo26@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-foreground/70 transition"
+            >
+              <Mail className="w-6 h-6" />
+            </a>
+          </div>
         </div>
+
       </aside>
 
       {/* Mobile Drawer */}

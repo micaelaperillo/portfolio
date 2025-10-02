@@ -32,7 +32,7 @@ return (
     <p className="mb-4">
       Beyond academics, I'm deeply interested in entrepreneurship—building
       products, joining hackathons, and connecting with like-minded people who
-      share the same drive for innovation.
+      share the same drive for building stuff.
     </p>
 
     <p className="mb-4">

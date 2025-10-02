@@ -40,7 +40,7 @@ export default function RootLayout({
         <Sidebar />
 
         {/* Main content */}
-        <main className="flex-1 p-6">
+        <main className="flex-1 p-6 md:ml-56">
           {children}
         </main>
       </body>
