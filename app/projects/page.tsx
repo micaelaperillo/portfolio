@@ -26,7 +26,7 @@ export default function Projects() {
     };
 
     return (
-        <div className="m-10 max-w-2xl">
+        <div className="m-10 max-w-4xl">
             <h1 className="mb-5 pt-10">Projects</h1>
             <p>Some of the projects I've build over the years</p>
             <p>Use the filters below to narrow down the projects by tags</p>
@@ -45,7 +45,7 @@ export default function Projects() {
                     </button>
                 ))}
             </div>
-            <div className="m-10 max-w-2xl">
+            <div className="m-10">
                 {filteredProjects.map((project: ProjectType) => (
                     <Project key={project.title} {...project} />
                 ))}

@@ -11,7 +11,7 @@ interface ProjectProps {
 
 export default function Project({ title, description, github, tags }: ProjectProps) {
   return (
-    <div className="border border-gray-900 rounded-lg p-4 mt-5 mb-5">
+    <div className="pt-5 mb-5">
       <div className="flex items-center justify-between mb-2">
         <h4>{title}</h4>
         {github && (
@@ -28,6 +28,7 @@ export default function Project({ title, description, github, tags }: ProjectPro
           </span>
         ))}
       </div>
+      <hr className="mt-5 border-gray-800" />
     </div>
   );
 }

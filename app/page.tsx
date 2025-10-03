@@ -30,7 +30,7 @@ return (
     </p>
 
     <p className="mb-4">
-      Beyond academics, I'm deeply interested in entrepreneurship—building
+      Beyond academics, I'm deeply interested in building
       products, joining hackathons, and connecting with like-minded people who
       share the same drive for building stuff.
     </p>
