@@ -55,6 +55,12 @@ export const projects: ProjectType[] = [
     tags: ["Python", "HTML", "CSS", "JavaScript", "Django", "SQL"]
   },
   {
+    title: "Portfolio",
+    description: "My personal portfolio",
+    github: "https://github.com/micaelaperillo/portfolio",
+    tags: ["Next.js", "Tailwind", "Vercel", "Web Application"],
+  },
+  {
     title: "Operating System",
     description: "Developed an OS kernel implementing features such as memory management, process scheduling, inter-process communication (IPC), and synchronization mechanisms, utilizing system calls for user-kernel interaction.",
     github: "https://github.com/micaelaperillo/operatingSystem",
