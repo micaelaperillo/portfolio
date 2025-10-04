@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Sans, Instrument_Serif, Roboto } from 'next/font/google';
+import { Analytics } from "@vercel/analytics/next"
+
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 
@@ -42,6 +44,7 @@ export default function RootLayout({
         {/* Main content */}
         <main className="flex-1 p-6 md:ml-56">
           {children}
+          <Analytics />
         </main>
       </body>
     </html>
